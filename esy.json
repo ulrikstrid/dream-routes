@@ -1,0 +1,22 @@
+{
+  "name": "dream-routes",
+  "version": "1.0.0",
+  "esy": {
+    "build": ["dune build -p #{self.name}"]
+  },
+  "scripts": {
+    "start": "dune exec src/bin/main.exe"
+  },
+  "dependencies": {
+    "@opam/routes": "*",
+    "@opam/dream": "*",
+    "ocaml": ">=4.8.0"
+  },
+  "devDependencies": {
+    "@opam/ocaml-lsp-server": "*",
+    "@opam/ocamlformat": "*"
+  },
+  "resolutions": {
+    "@opam/conf-libev": "esy-packages/libev:package.json#0b5eb6685b688649045aceac55dc559f6f21b829"
+  }
+}

@@ -1,0 +1,5 @@
+*.install
+_esy
+.vscode
+node_modules
+esy.lock
