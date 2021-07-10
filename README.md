@@ -9,13 +9,13 @@ let () =
   Dream.run
   @@ Dream.logger
   @@ Dream_routes.routes Routes.[
-    empty @--> (fun _request ->
+    Dream_routes.get @@ empty @--> (fun _request ->
       Dream.html "Good morning, world!");
 
-    s "echo" / int /? nil @--> (fun integer _request ->
-        Dream.html @@ Printf.sprintf "integer: %i" integer);
+    Dream_routes.get @@ s "echo" / int /? nil @--> (fun integer _request ->
+      Dream.html @@ Printf.sprintf "integer: %i" integer);
 
-    s "echo" / str /? nil @--> (fun word _request ->
+    Dream_routes.get @@ s "echo" / str /? nil @--> (fun word _request ->
       Dream.html word);
   ]
   @@ Dream.not_found
